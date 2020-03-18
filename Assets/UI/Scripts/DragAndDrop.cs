@@ -18,7 +18,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         rectTransform = GetComponent<RectTransform>();
 
-        instantiate = new Vector3(rectTransform.anchoredPosition.x + 330, 0, rectTransform.anchoredPosition.y * 1.6f);
+        instantiate = new Vector3(rectTransform.anchoredPosition.x + 300, 0, rectTransform.anchoredPosition.y * DragModifier);
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -45,5 +45,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         //Debug.Log("Click");
             newGenerator = Instantiate(Generator, instantiate, rectTransform.rotation);
+            newGenerator.transform.rotation = Quaternion.identity;
     }
 }

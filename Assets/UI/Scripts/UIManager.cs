@@ -7,7 +7,6 @@ public class UIManager : MonoBehaviour
 {
     [Header("Happiness")]
     public GameObject HappinessDisplay;
-    [Range(0, 8)]
     public int Happiness;
     private Slider HappinessComponent;
 
@@ -18,16 +17,34 @@ public class UIManager : MonoBehaviour
 
     [Header("Pollution")]
     public GameObject PolutionDisplay;
-    [Range(0, 10)]
+    [Range(0,10)]
     public int Polution;
     private Slider PolutionComponent;
+
+    [Header("PollutionPerRound")]
+    public GameObject PolutionPerRoundDisplay;
+    public int PolutionPerRound;
+    private Text PolutionPerRoundComponent;
+
+    [Header("Upkeep")]
+    public GameObject UpkeepDisplay;
+    public int Upkeep;
+    private Text UpkeepComponent;
+
+    [Header("Population")]
+    public GameObject PopulationDisplay;
+    public int population;
+    private Text PopulationComponent;
 
     // Start is called before the first frame update
     void Start()
     {
         HappinessComponent = HappinessDisplay.GetComponent<Slider>();
         PolutionComponent = PolutionDisplay.GetComponent<Slider>();
+        PolutionPerRoundComponent = PolutionPerRoundDisplay.GetComponent<Text>();
         wealthComponent = WealthDisplay.GetComponent<Text>();
+        UpkeepComponent = UpkeepDisplay.GetComponent<Text>();
+        PopulationComponent = PopulationDisplay.GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -36,5 +53,12 @@ public class UIManager : MonoBehaviour
         HappinessComponent.value = Happiness;
         PolutionComponent.value = Polution;
         wealthComponent.text = Wealth + " $";
+        UpkeepComponent.text = Upkeep + "  $";
+        PopulationComponent.text = population + " 웃";
+        PolutionPerRoundComponent.text = PolutionPerRound + " ☁";
+    }
+
+    public void nextRound() { 
+        
     }
 }

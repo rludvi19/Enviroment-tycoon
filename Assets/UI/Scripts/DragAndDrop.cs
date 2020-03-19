@@ -7,18 +7,16 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 {
     private RectTransform rectTransform;
     public GameObject Generator;
+    public GameObject position;
     private GameObject newGenerator;
-    private Vector3 instantiate;
     private Placement generatorPlacement;
 
-    private float DragModifier = 1.6f;
+    private float DragModifier = .6f;
    // public GameObject Background;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-
-        instantiate = new Vector3(rectTransform.anchoredPosition.x + 300, 0, rectTransform.anchoredPosition.y * DragModifier);
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -44,7 +42,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         //Debug.Log("Click");
-            newGenerator = Instantiate(Generator, instantiate, rectTransform.rotation);
+            newGenerator = Instantiate(Generator, position.transform.position, rectTransform.rotation);
             newGenerator.transform.rotation = Quaternion.identity;
     }
 }

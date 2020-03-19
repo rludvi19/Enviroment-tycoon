@@ -24,21 +24,22 @@ public class Placement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (placed && manager.Wealth >= properties.Price)
         {
-            if (Vector3.Distance(this.transform.position, center.transform.position) < 140)
+            if (Vector3.Distance(this.transform.position, center.transform.position) < 55f)
             {
                 this.gameObject.tag = "metropolis";
                 manager.Wealth -= properties.Price;
                 placed = false;
             }
-            else if (Vector3.Distance(this.transform.position, center.transform.position) < 270)
+            else if (Vector3.Distance(this.transform.position, center.transform.position) < 95f)
             {
                 this.gameObject.tag = "inland";
                 manager.Wealth -= properties.Price;
                 placed = false;
             }
-            else if (Vector3.Distance(this.transform.position, center.transform.position) < 430)
+            else if (Vector3.Distance(this.transform.position, center.transform.position) < 143f)
             {
                 this.gameObject.tag = "coast";
                 manager.Wealth -= properties.Price;

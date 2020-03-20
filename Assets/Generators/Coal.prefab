@@ -123,4 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ae6eb54f4c2b3408b5a7905f3d7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Menu: {fileID: 5942159451029855159, guid: c4d8e508fe810c5449f734437c8e8a89, type: 3}
   Price: 5

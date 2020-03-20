@@ -70,6 +70,7 @@
     <Compile Include="Assets\UI\Scripts\MessageBehaviour.cs" />
     <Compile Include="Assets\UI\Scripts\ShopHoverBehavior.cs" />
     <Compile Include="Assets\UI\Scripts\UIManager.cs" />
+    <Compile Include="Assets\UI\Scripts\generatorManipulator.cs" />
     <Compile Include="Assets\UI\Scripts\nextRound.cs" />
     <None Include="Assets\UI\Shaders\spriteGradient.shader" />
     <None Include="Assets\LowPolyWater_Pack\Shaders\WaterShaded.shader" />

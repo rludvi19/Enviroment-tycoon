@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 108845006}
   - component: {fileID: 108845005}
   m_Layer: 5
-  m_Name: 'Polution Level:'
+  m_Name: Pollution Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,7 +1158,7 @@ GameObject:
   - component: {fileID: 461410649}
   - component: {fileID: 461410648}
   m_Layer: 5
-  m_Name: 'population:'
+  m_Name: Population Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4216,7 +4216,7 @@ GameObject:
   - component: {fileID: 1785551035}
   - component: {fileID: 1785551034}
   m_Layer: 5
-  m_Name: 'Happiness:'
+  m_Name: Happiness Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4443,7 +4443,7 @@ GameObject:
   - component: {fileID: 1904596801}
   - component: {fileID: 1904596800}
   m_Layer: 5
-  m_Name: Polution Level
+  m_Name: Pollution
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

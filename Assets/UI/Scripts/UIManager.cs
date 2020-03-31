@@ -72,27 +72,4 @@ public class UIManager : MonoBehaviour
         EnergyComponent.text = Energy + " ϟ";
         PolutionPerRoundComponent.text = PollutionPerRound + " ☁";
     }
-
-    public void next()
-    {
-        Wealth += IncomePerCitizen;
-        Wealth -= Upkeep;
-        if (Energy > population * EnergyNeededPerCitizen)
-        {
-            Happiness += 1;
-            Wealth += (Energy - population * EnergyNeededPerCitizen) * PrizeForExessEnergy;
-        }
-        else if (Energy == population * EnergyNeededPerCitizen)
-        {
-            Happiness += 1;
-        }
-        else if (Energy < population * EnergyNeededPerCitizen)
-        {
-            Happiness += (Energy / EnergyNeededPerCitizen) - population;
-        }
-        population += PopulationIncreasePerRound;
-        Pollution += PollutionPerRound;
-
-
-    }
 }

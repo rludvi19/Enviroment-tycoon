@@ -124,4 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 5942159451029855159, guid: c4d8e508fe810c5449f734437c8e8a89, type: 3}
-  Price: 5
+  Price: 20
+  Upkeep: 20
+  Energy: 20
+  PollutionPerRound: 10
+  Happiness: 0

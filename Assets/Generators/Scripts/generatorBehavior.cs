@@ -7,6 +7,10 @@ public class generatorBehavior : MonoBehaviour
     private GameObject UI;
     public GameObject Menu;
     public int Price = 5;
+    public int Upkeep = 2;
+    public int Energy = 2;
+    public int PollutionPerRound = 1;
+    public int Happiness = 2;
     // Start is called before the first frame update
     void Start()
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -15,14 +16,14 @@ public class UIManager : MonoBehaviour
     public int Wealth;
     private Text wealthComponent;
 
-    [Header("Pollution")]
-    public GameObject PolutionDisplay;
-    public int Polution;
+    [FormerlySerializedAs("PolutionDisplay")] [Header("Pollution")]
+    public GameObject PollutionDisplay;
+    [FormerlySerializedAs("Polution")] public int Pollution;
     private Text PolutionComponent;
 
-    [Header("PollutionPerRound")]
-    public GameObject PolutionPerRoundDisplay;
-    public int PolutionPerRound;
+    [FormerlySerializedAs("PolutionPerRoundDisplay")] [Header("Pollution Per Round")]
+    public GameObject PollutionPerRoundDisplay;
+    [FormerlySerializedAs("PolutionPerRound")] public int PollutionPerRound;
     private Text PolutionPerRoundComponent;
 
     [Header("Energy")]
@@ -52,8 +53,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         HappinessComponent = HappinessDisplay.GetComponent<Text>();
-        PolutionComponent = PolutionDisplay.GetComponent<Text>();
-        PolutionPerRoundComponent = PolutionPerRoundDisplay.GetComponent<Text>();
+        PolutionComponent = PollutionDisplay.GetComponent<Text>();
+        PolutionPerRoundComponent = PollutionPerRoundDisplay.GetComponent<Text>();
         wealthComponent = WealthDisplay.GetComponent<Text>();
         UpkeepComponent = UpkeepDisplay.GetComponent<Text>();
         EnergyComponent = EnergyDisplay.GetComponent<Text>();
@@ -64,34 +65,11 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         HappinessComponent.text = Happiness*10 + " %";
-        PolutionComponent.text = Polution + " ☁";
+        PolutionComponent.text = Pollution + " ☁";
         wealthComponent.text = Wealth + " $";
         UpkeepComponent.text = Upkeep + "  $";
         PopulationComponent.text = population + " 웃";
         EnergyComponent.text = Energy + " ϟ";
-        PolutionPerRoundComponent.text = PolutionPerRound + " ☁";
-    }
-
-    public void next()
-    {
-        Wealth += IncomePerCitizen;
-        Wealth -= Upkeep;
-        if (Energy > population * EnergyNeededPerCitizen)
-        {
-            Happiness += 1;
-            Wealth += (Energy - population * EnergyNeededPerCitizen) * PrizeForExessEnergy;
-        }
-        else if (Energy == population * EnergyNeededPerCitizen)
-        {
-            Happiness += 1;
-        }
-        else if (Energy < population * EnergyNeededPerCitizen)
-        {
-            Happiness += (Energy / EnergyNeededPerCitizen) - population;
-        }
-        population += PopulationIncreasePerRound;
-        Polution += PolutionPerRound;
-
-
+        PolutionPerRoundComponent.text = PollutionPerRound + " ☁";
     }
 }

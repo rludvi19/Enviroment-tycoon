@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Events\Scripts\eventSelector.cs" />
      <Compile Include="Assets\Generators\Scripts\Placement.cs" />
      <Compile Include="Assets\Generators\Scripts\generatorBehavior.cs" />
      <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />

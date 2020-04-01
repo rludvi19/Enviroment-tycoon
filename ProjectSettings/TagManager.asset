@@ -9,6 +9,7 @@ TagManager:
   - coast
   - NoMoney
   - UI
+  - generatorManipulator
   layers:
   - Default
   - TransparentFX

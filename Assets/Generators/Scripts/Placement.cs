@@ -31,18 +31,31 @@ public class Placement : MonoBehaviour
             {
                 this.gameObject.tag = "metropolis";
                 manager.Wealth -= properties.Price;
+                manager.Upkeep += properties.Upkeep;
+                manager.Energy += properties.Energy + 10;
+                manager.PollutionPerRound += properties.PollutionPerRound;
+                manager.Happiness += properties.Happiness - 10;
                 placed = false;
             }
             else if (Vector3.Distance(this.transform.position, center.transform.position) < 95f)
             {
                 this.gameObject.tag = "inland";
+
                 manager.Wealth -= properties.Price;
+                manager.Upkeep += properties.Upkeep;
+                manager.Energy += properties.Energy;
+                manager.PollutionPerRound += properties.PollutionPerRound;
+                manager.Happiness += properties.Happiness;
                 placed = false;
             }
             else if (Vector3.Distance(this.transform.position, center.transform.position) < 143f)
             {
                 this.gameObject.tag = "coast";
-                manager.Wealth -= properties.Price;
+                manager.Wealth -= properties.Price + 10;
+                manager.Upkeep += properties.Upkeep;
+                manager.Energy += properties.Energy;
+                manager.PollutionPerRound += properties.PollutionPerRound;
+                manager.Happiness += properties.Happiness + 10;
                 placed = false;
             }
             else

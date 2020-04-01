@@ -23,12 +23,12 @@ public class generatorManipulator : MonoBehaviour
     {
         generatorBehavior behaviour;
         behaviour = Generator.GetComponent<generatorBehavior>();
-        /*
-         *  UI.Upkeep -= behaviour.Upkeep;
-         *  UI.Energy -= behaviour.Energy;
-         *  UI.PolutionPerRound -= behaviour.PolutionPerRound;
-         *  UI.Happiness -= behaviour.Happiness;
-         */
+
+          UI.Upkeep -= behaviour.Upkeep;
+          UI.Energy -= behaviour.Energy;
+          UI.PollutionPerRound -= behaviour.PollutionPerRound;
+          UI.Happiness -= behaviour.Happiness;
+         
         Destroy(this.Generator);
         Destroy(gameObject);
     }

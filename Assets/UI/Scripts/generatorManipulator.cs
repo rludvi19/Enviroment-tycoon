@@ -46,5 +46,13 @@ public class generatorManipulator : MonoBehaviour
         // behaviour.Upgrade();
         Destroy(gameObject);
     }
+    
+    public void close()
+    {
+        generatorBehavior behaviour;
+        behaviour = Generator.GetComponent<generatorBehavior>();
+        // behaviour.close();
+        Destroy(gameObject);
+    }
 
 }

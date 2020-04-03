@@ -131,8 +131,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3699189}
   - component: {fileID: 3699192}
-  - component: {fileID: 3699191}
   - component: {fileID: 3699190}
+  - component: {fileID: 3699191}
   m_Layer: 5
   m_Name: EventPanelHeader
   m_TagString: Untagged
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3699188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -197,16 +197,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2a003084dfc6eae4685ae649573cea7a, type: 3}
+    m_FontSize: 10
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 128
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
 --- !u!222 &3699192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1447,9 +1451,12 @@ GameObject:
   - component: {fileID: 493754865}
   - component: {fileID: 493754864}
   - component: {fileID: 493754866}
+  - component: {fileID: 493754870}
+  - component: {fileID: 493754869}
+  - component: {fileID: 493754871}
   m_Layer: 5
   m_Name: EventPanel
-  m_TagString: Untagged
+  m_TagString: EventPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1536,6 +1543,64 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 0
+--- !u!114 &493754869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493754862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &493754870
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493754862}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &493754871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493754862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca76bf8069240434cbaec19b99904ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 3699191}
+  descriptionText: {fileID: 1023535541}
+  artworkImage: {fileID: 1150150748}
 --- !u!1 &518011343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,8 +2749,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1023535539}
   - component: {fileID: 1023535542}
-  - component: {fileID: 1023535541}
   - component: {fileID: 1023535540}
+  - component: {fileID: 1023535541}
   m_Layer: 5
   m_Name: EventPanelText
   m_TagString: Untagged
@@ -2741,7 +2806,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1023535538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -2750,16 +2815,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: d743c59f1be7b5246ba7decc14ddd5bc, type: 3}
+    m_FontSize: 6
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 128
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
 --- !u!222 &1023535542
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2945,7 +3014,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1628120488}
-        m_MethodName: next
+        m_MethodName: Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4036,7 +4105,7 @@ GameObject:
   - component: {fileID: 1603896550}
   - component: {fileID: 1603896551}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: EventTextPanels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4099,7 +4168,6 @@ GameObject:
   - component: {fileID: 1628120486}
   - component: {fileID: 1628120485}
   - component: {fileID: 1628120484}
-  - component: {fileID: 1628120487}
   - component: {fileID: 1628120488}
   m_Layer: 0
   m_Name: EventSystem
@@ -4156,20 +4224,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1628120487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628120483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dac4bd477fe3f564284e54c491ca5e00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UIPanel: {fileID: 493754862}
-  manager: {fileID: 430407969}
 --- !u!114 &1628120488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4182,8 +4236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e76ab47b05e854b92b265e7702cc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIPanel: {fileID: 493754862}
   Manager: {fileID: 430407969}
-  Events: {fileID: 1628120483}
+  events: []
 --- !u!1 &1640561238
 GameObject:
   m_ObjectHideFlags: 0

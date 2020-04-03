@@ -9,6 +9,7 @@ TagManager:
   - coast
   - NoMoney
   - UI
+  - EventPanel
   layers:
   - Default
   - TransparentFX

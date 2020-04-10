@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Hector\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Hector\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Enviroment-tycoon.1067463885.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Hector\Desktop\Code\Enviroment-tycoon" t="IncludeRecursive">
+    <e p="C:\Users\Niels Henrik\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Niels Henrik\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Enviroment-tycoon.-663813626.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Niels Henrik\Documents\GitHub\Enviroment-tycoon" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -43,6 +43,43 @@
           </e>
           <e p="Shaders" t="Include">
             <e p="spriteGradient.shader" t="Include" />
+          </e>
+          <e p="UI_Tooltip" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Consumable.cs" t="Include" />
+              <e p="EnergyType.cs" t="Include" />
+              <e p="Item.cs" t="Include" />
+              <e p="ItemButton.cs" t="Include" />
+              <e p="TooltipPopup.cs" t="Include" />
+            </e>
+            <e p="TextMesh Pro" t="Include">
+              <e p="Fonts" t="Include">
+                <e p="LiberationSans - OFL.txt" t="Include" />
+              </e>
+              <e p="Resources" t="Include">
+                <e p="LineBreaking Following Characters.txt" t="Include" />
+                <e p="LineBreaking Leading Characters.txt" t="Include" />
+                <e p="Shaders" t="Include">
+                  <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+                  <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+                  <e p="TMP_Bitmap.shader" t="Include" />
+                  <e p="TMP_SDF Overlay.shader" t="Include" />
+                  <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+                  <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+                  <e p="TMP_SDF-Mobile.shader" t="Include" />
+                  <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+                  <e p="TMP_SDF-Surface.shader" t="Include" />
+                  <e p="TMP_SDF.shader" t="Include" />
+                  <e p="TMP_Sprite.shader" t="Include" />
+                  <e p="TMPro.cginc" t="Include" />
+                  <e p="TMPro_Properties.cginc" t="Include" />
+                  <e p="TMPro_Surface.cginc" t="Include" />
+                </e>
+              </e>
+              <e p="Sprites" t="Include">
+                <e p="EmojiOne Attribution.txt" t="Include" />
+              </e>
+            </e>
           </e>
         </e>
       </e>

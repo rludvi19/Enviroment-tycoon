@@ -40,6 +40,17 @@ public class UIManager : MonoBehaviour
     public GameObject PopulationDisplay;
     public int population;
     private Text PopulationComponent;
+    
+    [Header("Turn")]
+    public GameObject TurnDisplay;
+    public int turn;
+    private Text TurnComponent;
+    
+    [Header("Event(s)")]
+    public GameObject CurEventDisplay;
+    public string curEvent;
+    private Text CurEventComponent;
+
 
     [Header("Balancing")]
     [Header("______________________________________________________________________________________________")]
@@ -59,17 +70,21 @@ public class UIManager : MonoBehaviour
         UpkeepComponent = UpkeepDisplay.GetComponent<Text>();
         EnergyComponent = EnergyDisplay.GetComponent<Text>();
         PopulationComponent = PopulationDisplay.GetComponent<Text>();
+        TurnComponent = TurnDisplay.GetComponent<Text>();
+        CurEventComponent = CurEventDisplay.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
         HappinessComponent.text = Happiness*10 + " %";
-        PolutionComponent.text = Pollution + " ☁";
-        wealthComponent.text = Wealth + " $";
-        UpkeepComponent.text = Upkeep + "  $";
-        PopulationComponent.text = population + " 웃";
-        EnergyComponent.text = Energy + " ϟ";
-        PolutionPerRoundComponent.text = PollutionPerRound + " ☁";
+        PolutionComponent.text = Pollution + " %";
+        wealthComponent.text = "$" + Wealth;
+        UpkeepComponent.text = "$"+ Upkeep;
+        PopulationComponent.text = population + "";
+        EnergyComponent.text = Energy + "";
+        PolutionPerRoundComponent.text = PollutionPerRound + "";
+        TurnComponent.text = "Turn: " + turn;
+        CurEventComponent.text = "Ongoing Event(s):    " + curEvent;
     }
 }

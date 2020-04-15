@@ -47,9 +47,12 @@ public class Placement : MonoBehaviour
             }
             else
             {
-                placed = false;
                 Destroy(gameObject);
+                placed = false;
+           //  Destroy(gameObject);
             }
+            
+            
 
         }
         else if(placed) {

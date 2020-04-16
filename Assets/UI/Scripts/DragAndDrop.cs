@@ -43,6 +43,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         //Debug.Log("Click");
             newGenerator = Instantiate(Generator, position.transform.position, rectTransform.rotation);
+            newGenerator.SetActive(true);
             newGenerator.transform.rotation = Quaternion.identity;
     }
 }

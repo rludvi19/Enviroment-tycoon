@@ -79,12 +79,12 @@ public class UIManager : MonoBehaviour
     {
         HappinessComponent.text = Happiness*10 + " %";
         PolutionComponent.text = Pollution + " %";
-        wealthComponent.text = "$" + Wealth;
-        UpkeepComponent.text = "$"+ Upkeep;
+        wealthComponent.text = "" + Wealth;
+        UpkeepComponent.text = ""+ Upkeep;
         PopulationComponent.text = population + "";
         EnergyComponent.text = Energy + "";
         PolutionPerRoundComponent.text = PollutionPerRound + "";
-        TurnComponent.text = "Turn: " + turn;
+        TurnComponent.text = "End Turn: " + turn;
         CurEventComponent.text = "Ongoing Event(s):    " + curEvent;
     }
 }

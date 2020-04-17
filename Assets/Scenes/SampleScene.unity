@@ -3013,8 +3013,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1628120488}
-        m_MethodName: Start
+      - m_Target: {fileID: 1628120487}
+        m_MethodName: Next
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4168,7 +4168,7 @@ GameObject:
   - component: {fileID: 1628120486}
   - component: {fileID: 1628120485}
   - component: {fileID: 1628120484}
-  - component: {fileID: 1628120488}
+  - component: {fileID: 1628120487}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4224,7 +4224,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1628120488
+--- !u!114 &1628120487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4236,9 +4236,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e76ab47b05e854b92b265e7702cc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIPanel: {fileID: 493754862}
+  EventPanel: {fileID: 493754862}
   Manager: {fileID: 430407969}
-  events: []
+  events:
+  - {fileID: 11400000, guid: d9482067f41283947ba3a24442ff9082, type: 2}
+  - {fileID: 11400000, guid: 4f1ddda9f7af36f44ab1f37c182e89ad, type: 2}
+  - {fileID: 11400000, guid: 8f269a6c07c0bdc44b44920653d19fdf, type: 2}
 --- !u!1 &1640561238
 GameObject:
   m_ObjectHideFlags: 0

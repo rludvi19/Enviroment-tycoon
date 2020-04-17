@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd0105144b4b1748a9b135d5ab83b7f, type: 3}
+  m_Name: Nuclear Disaster Overseas!
+  m_EditorClassIdentifier: 
+  name: Nuclear Disaster Overseas
+  description: 'A grave nuclear disaster as occurred in another country. The world
+    is abuzz with anti nuclear sentiment.
+
+
+    Effect: Decrease happiness for every
+    nuclear power plant on the island.'
+  artwork: {fileID: 0}

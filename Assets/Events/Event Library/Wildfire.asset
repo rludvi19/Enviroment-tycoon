@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd0105144b4b1748a9b135d5ab83b7f, type: 3}
   m_Name: Wildfire
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: Wildfire
+  description: 'A wildfire is scorching through the forests on the island. '
   artwork: {fileID: 0}

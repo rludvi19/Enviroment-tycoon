@@ -45,10 +45,9 @@
           <e p="Shaders" t="Include">
             <e p="spriteGradient.shader" t="Include" />
           </e>
-          <e p="UI_Tooltip" t="Include">
+          <e p="Tooltip" t="Include">
             <e p="Scripts" t="Include">
               <e p="Consumable.cs" t="Include" />
-              <e p="Icons.cs" t="Include" />
               <e p="Item.cs" t="Include" />
               <e p="ItemButton.cs" t="Include" />
               <e p="TooltipPopup.cs" t="Include" />

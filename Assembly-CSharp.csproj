@@ -69,10 +69,12 @@
      <Compile Include="Assets\UI\Scripts\generatorManipulator.cs" />
      <Compile Include="Assets\UI\Scripts\nextRound.cs" />
      <Compile Include="Assets\UI\UI_Tooltip\Scripts\Consumable.cs" />
-     <Compile Include="Assets\UI\UI_Tooltip\Scripts\EnergyType.cs" />
+     <Compile Include="Assets\UI\UI_Tooltip\Scripts\Icons.cs" />
      <Compile Include="Assets\UI\UI_Tooltip\Scripts\Item.cs" />
      <Compile Include="Assets\UI\UI_Tooltip\Scripts\ItemButton.cs" />
      <Compile Include="Assets\UI\UI_Tooltip\Scripts\TooltipPopup.cs" />
+     <Compile Include="Assets\UI\UI_Tooltip\Scripts\TopPanelFunction.cs" />
+     <Compile Include="Assets\UI\UI_Tooltip\Scripts\TypeColor.cs" />
      <None Include="Assets\UI\Shaders\spriteGradient.shader" />
      <None Include="Assets\UI\UI_Tooltip\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\UI\UI_Tooltip\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -117,6 +119,9 @@
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/Niels Henrik/Documents/GitHub/Enviroment-tycoon/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>C:/Users/Niels Henrik/Documents/GitHub/Enviroment-tycoon/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
  <HintPath>C:/Users/Niels Henrik/Documents/GitHub/Enviroment-tycoon/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f6f59d502af0c245abf1033738e8a8a, type: 3}
-  m_Name: EnergyTypeColor_Rewenable
+  m_Script: {fileID: 11500000, guid: 1f14d593f32c6c841adfcb8bd65ca52b, type: 3}
+  m_Name: DollarColor
   m_EditorClassIdentifier: 
-  name: Renewable
-  textColour: {r: 0.11764706, g: 0.5647059, b: 1, a: 1}
+  name: Currency
+  textColour: {r: 0.9056604, g: 0.7898811, b: 0.06407974, a: 1}

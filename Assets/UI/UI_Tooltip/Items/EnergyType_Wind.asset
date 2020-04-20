@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wind
   price: 3
-  energyType: {fileID: 11400000, guid: cda7d50577ff72942b2bd4f041391422, type: 2}
+  typeColor: {fileID: 11400000, guid: cda7d50577ff72942b2bd4f041391422, type: 2}
   useText: Something

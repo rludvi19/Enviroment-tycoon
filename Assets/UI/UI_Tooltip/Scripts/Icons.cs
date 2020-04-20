@@ -3,7 +3,7 @@
 namespace EnergiScript.TooltipUI
 {
     [CreateAssetMenu]
-    public class EnergyType : ScriptableObject
+    public class icons : ScriptableObject
     {
         [SerializeField] private new string name;
         [SerializeField] private Color textColour;

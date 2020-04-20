@@ -1,44 +1,65 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Events.Scripts;
 using UnityEngine;
 
-public class nextRound : MonoBehaviour
+namespace UI.Scripts
 {
-    public GameObject Manager;
-    public GameObject Events;
-    private UIManager Stats;
-
-    // Start is called before the first frame update
-    void Start()
+    public class NextRound : MonoBehaviour
     {
-        Stats = Manager.gameObject.GetComponent<UIManager>();
-        next();
-    }
+        public GameObject EventPanel;
+        public GameObject Manager;
+        private UIManager Stats;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public List<EventTemplate> events;
+        private EventTemplate selectedEvent;
+
+        public void Start()
+        {
+            Stats = Manager.gameObject.GetComponent<UIManager>();
+        }
     
-    public void next()
-    {
-        Stats.Wealth += Stats.IncomePerCitizen;
-        Stats.Wealth -= Stats.Upkeep;
-        if (Stats.Energy > Stats.population * Stats.EnergyNeededPerCitizen)
+        public void Next()
         {
-            Stats.Happiness += 1;
-            Stats.Wealth += (Stats.Energy - Stats.population * Stats.EnergyNeededPerCitizen) * Stats.PrizeForExessEnergy;
+            Stats.Wealth += Stats.IncomePerCitizen;
+            Stats.Wealth -= Stats.Upkeep;
+            if (Stats.Energy > Stats.population * Stats.EnergyNeededPerCitizen)
+            {
+                Stats.Happiness += 1;
+                Stats.Wealth += (Stats.Energy - Stats.population * Stats.EnergyNeededPerCitizen) *
+                                Stats.PrizeForExessEnergy;
+            }
+            else if (Stats.Energy == Stats.population * Stats.EnergyNeededPerCitizen)
+            {
+                Stats.Happiness += 1;
+            }
+            else if (Stats.Energy < Stats.population * Stats.EnergyNeededPerCitizen)
+            {
+                Stats.Happiness += (Stats.Energy / Stats.EnergyNeededPerCitizen) - Stats.population;
+            }
+
+            Stats.population += Stats.PopulationIncreasePerRound;
+            Stats.Pollution += Stats.PollutionPerRound;
+
+            selectedEvent = SelectEvent();
+        
+            EventPanel.GetComponent<EventDisplay>().DisplayEvent(selectedEvent, EventPanel);
         }
-        else if (Stats.Energy == Stats.population * Stats.EnergyNeededPerCitizen)
+
+        private EventTemplate SelectEvent()
         {
-            Stats.Happiness += 1;
+            EventTemplate chosenEvent = events[Random.Range(0, events.Count)];
+            return chosenEvent;
         }
-        else if (Stats.Energy < Stats.population * Stats.EnergyNeededPerCitizen)
+
+        /*static List<EventTemplate> GetAllEvents()
         {
-            Stats.Happiness += (Stats.Energy / Stats.EnergyNeededPerCitizen) - Stats.population;
-        }
-        Stats.population += Stats.PopulationIncreasePerRound;
-        Stats.Pollution += Stats.PollutionPerRound;
+            List<EventTemplate> objectsInScene = new List<EventTemplate>();
+
+            foreach (EventTemplate go in Resources.FindObjectsOfTypeAll(typeof(EventTemplate)) as EventTemplate[])
+            {
+                objectsInScene.Add(go);
+            }
+            return objectsInScene;
+        }*/
     }
 }

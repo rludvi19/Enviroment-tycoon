@@ -63,12 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Events\Scripts\eventSelector.cs" />
+     <Compile Include="Assets\Events\Scripts\EventDisplay.cs" />
+     <Compile Include="Assets\Events\Scripts\EventTemplate.cs" />
      <Compile Include="Assets\Generators\Scripts\Placement.cs" />
      <Compile Include="Assets\Generators\Scripts\generatorBehavior.cs" />
      <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
      <Compile Include="Assets\UI\Scripts\DragAndDrop.cs" />
      <Compile Include="Assets\UI\Scripts\MessageBehaviour.cs" />
+     <Compile Include="Assets\UI\Scripts\NextRound.cs" />
      <Compile Include="Assets\UI\Scripts\ShopHoverBehavior.cs" />
      <Compile Include="Assets\UI\Scripts\UIManager.cs" />
      <Compile Include="Assets\UI\Scripts\generatorManipulator.cs" />

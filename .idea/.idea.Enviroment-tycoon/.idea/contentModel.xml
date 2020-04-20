@@ -9,7 +9,8 @@
       <e p="Assets" t="Include">
         <e p="Events" t="Include">
           <e p="Scripts" t="Include">
-            <e p="eventSelector.cs" t="Include" />
+            <e p="EventDisplay.cs" t="Include" />
+            <e p="EventTemplate.cs" t="Include" />
           </e>
         </e>
         <e p="Generators" t="Include">

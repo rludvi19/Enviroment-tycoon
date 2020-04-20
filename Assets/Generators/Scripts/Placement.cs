@@ -13,6 +13,7 @@ public class Placement : MonoBehaviour
     public GameObject UI;
 
     private generatorBehavior properties;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,10 @@ public class Placement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        RaycastHit raycastHit;
         if (placed && manager.Wealth >= properties.Price)
         {
-            RaycastHit hit;
-            Vector3 direction = new Vector3(0,-1,0);
+            Vector3 direction = new Vector3(0, -1, 0);
 
             if (Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity))
             {
@@ -52,35 +52,30 @@ public class Placement : MonoBehaviour
             {
                 Destroy(gameObject);
                 placed = false;
-           //  Destroy(gameObject);
+                //  Destroy(gameObject);
             }
-            
-            
 
-                    manager.Wealth -= properties.Price;
-                    manager.Upkeep += properties.Upkeep;
-                    manager.Energy += properties.Energy;
-                    manager.PollutionPerRound += properties.PollutionPerRound;
-                    manager.Happiness += properties.Happiness;
-                    placed = false;
-
-                }
-                else if (hit.transform.tag.Equals("coast"))
-                {
-                    this.gameObject.tag = "coast";
-                    manager.Wealth -= properties.Price + 10;
-                    manager.Upkeep += properties.Upkeep;
-                    manager.Energy += properties.Energy;
-                    manager.PollutionPerRound += properties.PollutionPerRound;
-                    manager.Happiness += properties.Happiness + 10;
-                    placed = false;
-                }
-                else
-                {
-                    placed = false;
-                    Destroy(gameObject);
-                }
-            }
+            manager.Wealth -= properties.Price;
+            manager.Upkeep += properties.Upkeep;
+            manager.Energy += properties.Energy;
+            manager.PollutionPerRound += properties.PollutionPerRound;
+            manager.Happiness += properties.Happiness;
+            placed = false;
+        }
+        else if (raycastHit.transform.tag.Equals("coast"))
+        {
+            this.gameObject.tag = "coast";
+            manager.Wealth -= properties.Price + 10;
+            manager.Upkeep += properties.Upkeep;
+            manager.Energy += properties.Energy;
+            manager.PollutionPerRound += properties.PollutionPerRound;
+            manager.Happiness += properties.Happiness + 10;
+            placed = false;
+        }
+        else
+        {
+            placed = false;
+            Destroy(gameObject);
         }
     }
 }

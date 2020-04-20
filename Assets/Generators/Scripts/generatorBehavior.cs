@@ -30,7 +30,7 @@ public class generatorBehavior : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GameObject MenuObject = Instantiate(Menu, this.transform.position, UI.transform.rotation);
+        GameObject MenuObject = Instantiate(Menu, Input.mousePosition, UI.transform.rotation);
         MenuObject.transform.parent = UI.transform;
         MenuObject.GetComponent<generatorManipulator>().Generator = this.gameObject;
     }

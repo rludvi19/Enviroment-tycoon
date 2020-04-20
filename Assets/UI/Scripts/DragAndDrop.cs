@@ -11,7 +11,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private GameObject newGenerator;
     private Placement generatorPlacement;
 
-    private float DragModifier = 1f;
+    private float DragModifier = .6f;
+    private float BuildYPos = -31;
    // public GameObject Background;
 
     private void Awake()
@@ -25,9 +26,13 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-            Vector3 delta = new Vector3(eventData.delta.x * DragModifier, 0, eventData.delta.y * DragModifier);
+            Vector3 delta = new Vector3(eventData.delta.x * DragModifier, BuildYPos, eventData.delta.y * DragModifier);
             //Debug.Log("Dragging");
+            BuildYPos = 0;
             newGenerator.transform.position += delta;
+            
+            
+
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -36,13 +41,16 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
             generatorPlacement = newGenerator.GetComponent<Placement>();
             generatorPlacement.placed = true;
+            BuildYPos = -31;
+            Cursor.visible = true;
 
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         //Debug.Log("Click");
-            newGenerator = Instantiate(Generator, position.transform.position, rectTransform.rotation);
+            newGenerator = Instantiate(Generator, eventData.delta , rectTransform.rotation);
             newGenerator.transform.rotation = Quaternion.identity;
+            Cursor.visible = false;
     }
 }

@@ -6,17 +6,23 @@ public class generatorManipulator : MonoBehaviour
 {
     private UIManager UI;
     public GameObject Generator;
+    public GameObject CloseMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         UI = FindObjectOfType<UIManager>();
+        CloseMenu = GameObject.FindGameObjectWithTag("generatorManipulator");
+        if(CloseMenu != null) {
+            Destroy(CloseMenu);
+        }
+        this.gameObject.tag = "generatorManipulator";
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       // Destroy(this.gameObject, 3);
     }
 
     public void deletion()
@@ -38,6 +44,14 @@ public class generatorManipulator : MonoBehaviour
         generatorBehavior behaviour;
         behaviour = Generator.GetComponent<generatorBehavior>();
         // behaviour.Upgrade();
+        Destroy(gameObject);
+    }
+    
+    public void close()
+    {
+        generatorBehavior behaviour;
+        behaviour = Generator.GetComponent<generatorBehavior>();
+        // behaviour.close();
         Destroy(gameObject);
     }
 

@@ -32,20 +32,30 @@ public class Placement : MonoBehaviour
 
             if (Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity))
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back));
-                if (hit.transform.tag.Equals("metropolis"))
-                {
-                    this.gameObject.tag = "metropolis";
-                    manager.Wealth -= properties.Price;
-                    manager.Upkeep += properties.Upkeep;
-                    manager.Energy += properties.Energy + 10;
-                    manager.PollutionPerRound += properties.PollutionPerRound;
-                    manager.Happiness += properties.Happiness - 10;
-                    placed = false;
-                }
-                else if (hit.transform.tag.Equals("inland"))
-                {
-                    this.gameObject.tag = "inland";
+                this.gameObject.tag = "metropolis";
+                manager.Wealth -= properties.Price;
+                placed = false;
+            }
+            else if (Vector3.Distance(this.transform.position, center.transform.position) < 95f)
+            {
+                this.gameObject.tag = "inland";
+                manager.Wealth -= properties.Price;
+                placed = false;
+            }
+            else if (Vector3.Distance(this.transform.position, center.transform.position) < 143f)
+            {
+                this.gameObject.tag = "coast";
+                manager.Wealth -= properties.Price;
+                placed = false;
+            }
+            else
+            {
+                Destroy(gameObject);
+                placed = false;
+           //  Destroy(gameObject);
+            }
+            
+            
 
                     manager.Wealth -= properties.Price;
                     manager.Upkeep += properties.Upkeep;

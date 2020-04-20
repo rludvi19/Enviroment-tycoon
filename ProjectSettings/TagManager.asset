@@ -9,6 +9,7 @@ TagManager:
   - coast
   - NoMoney
   - UI
+  - generatorManipulator
   - EventPanel
   layers:
   - Default

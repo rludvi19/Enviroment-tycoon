@@ -10,7 +10,6 @@ public class Placement : MonoBehaviour
 
     private UIManager manager;
     public GameObject noMoney;
-    public GameObject UI;
 
     private generatorBehavior properties;
 
@@ -19,63 +18,55 @@ public class Placement : MonoBehaviour
     {
         properties = GetComponent<generatorBehavior>();
         manager = FindObjectOfType<UIManager>();
-        UI = GameObject.Find("UI");
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit raycastHit;
+
         if (placed && manager.Wealth >= properties.Price)
         {
             Vector3 direction = new Vector3(0, -1, 0);
 
+            RaycastHit hit;
             if (Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity))
             {
-                this.gameObject.tag = "metropolis";
-                manager.Wealth -= properties.Price;
-                placed = false;
-            }
-            else if (Vector3.Distance(this.transform.position, center.transform.position) < 95f)
-            {
-                this.gameObject.tag = "inland";
-                manager.Wealth -= properties.Price;
-                placed = false;
-            }
-            else if (Vector3.Distance(this.transform.position, center.transform.position) < 143f)
-            {
-                this.gameObject.tag = "coast";
-                manager.Wealth -= properties.Price;
-                placed = false;
+                if (hit.transform.tag.Equals("metropolis"))
+                {
+                    this.gameObject.tag = "metropolis";
+                    manager.Wealth -= properties.Price;
+                    manager.Upkeep += properties.Upkeep;
+                    manager.Energy += properties.Energy + 10;
+                    manager.PollutionPerRound += properties.PollutionPerRound;
+                    manager.Happiness += properties.Happiness - 10;
+                    placed = false;
+                }
+                else if (hit.transform.tag.Equals("inland"))
+                {
+                    this.gameObject.tag = "inland";
+                    manager.Wealth -= properties.Price;
+                    manager.Upkeep += properties.Upkeep;
+                    manager.Energy += properties.Energy;
+                    manager.PollutionPerRound += properties.PollutionPerRound;
+                    manager.Happiness += properties.Happiness;
+                    placed = false;
+                }
+                else if (hit.transform.tag.Equals("coast"))
+                {
+                    this.gameObject.tag = "coast";
+                    manager.Wealth -= properties.Price + 10;
+                    manager.Upkeep += properties.Upkeep;
+                    manager.Energy += properties.Energy;
+                    manager.PollutionPerRound += properties.PollutionPerRound;
+                    manager.Happiness += properties.Happiness + 10;
+                    placed = false;
+                }
             }
             else
             {
-                Destroy(gameObject);
                 placed = false;
-                //  Destroy(gameObject);
+                Destroy(gameObject);
             }
-
-            manager.Wealth -= properties.Price;
-            manager.Upkeep += properties.Upkeep;
-            manager.Energy += properties.Energy;
-            manager.PollutionPerRound += properties.PollutionPerRound;
-            manager.Happiness += properties.Happiness;
-            placed = false;
-        }
-        else if (raycastHit.transform.tag.Equals("coast"))
-        {
-            this.gameObject.tag = "coast";
-            manager.Wealth -= properties.Price + 10;
-            manager.Upkeep += properties.Upkeep;
-            manager.Energy += properties.Energy;
-            manager.PollutionPerRound += properties.PollutionPerRound;
-            manager.Happiness += properties.Happiness + 10;
-            placed = false;
-        }
-        else
-        {
-            placed = false;
-            Destroy(gameObject);
         }
     }
 }

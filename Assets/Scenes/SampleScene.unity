@@ -4793,9 +4793,15 @@ MonoBehaviour:
   EventPanel: {fileID: 493754862}
   Manager: {fileID: 430407969}
   events:
+  - {fileID: 11400000, guid: 5db698ca1808f394497478c22939999d, type: 2}
   - {fileID: 11400000, guid: d9482067f41283947ba3a24442ff9082, type: 2}
+  - {fileID: 11400000, guid: f7901af0759119548b9f860849ea702d, type: 2}
+  - {fileID: 11400000, guid: 835564c2a04b1714fa2507d9564a1576, type: 2}
+  - {fileID: 11400000, guid: 59732260ed283fa46b2f45534f69f675, type: 2}
   - {fileID: 11400000, guid: 4f1ddda9f7af36f44ab1f37c182e89ad, type: 2}
+  - {fileID: 11400000, guid: 1a9989ecca03a8544b05c668c7196ae4, type: 2}
   - {fileID: 11400000, guid: 8f269a6c07c0bdc44b44920653d19fdf, type: 2}
+  - {fileID: 11400000, guid: 44f5f65d0928a1740ad22c535c00db98, type: 2}
 --- !u!1 &1640561238
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Coal
   price: 1
-  energyType: {fileID: 11400000, guid: a182f5ad81bda484c85a0ba366150258, type: 2}
-  useText: Something
+  typeColor: {fileID: 11400000, guid: a182f5ad81bda484c85a0ba366150258, type: 2}
+  useText: Coal is a nonrenewable energy source that is currently the most widely
+    used energy supply method. The energy found in coal is stored from plants that
+    lived hundreds of millions years ago.

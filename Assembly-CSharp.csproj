@@ -2,6 +2,9 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
+    <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{49ACA157-7E8A-C488-C852-18B0EB9CFDEC}</ProjectGuid>
+    <ProjectGuid>{825791CD-A9DE-2FF2-A446-413A5F773055}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -27,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,6 +40,7 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -44,16 +49,6 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
-    <UnityVersion>2019.3.3f1</UnityVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>E:\Programs\2019.3.3f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -76,10 +71,12 @@
      <Compile Include="Assets\UI\Scripts\generatorManipulator.cs" />
      <Compile Include="Assets\UI\Scripts\nextRound.cs" />
      <Compile Include="Assets\UI\UI_Tooltip\Scripts\Consumable.cs" />
-     <Compile Include="Assets\UI\UI_Tooltip\Scripts\EnergyType.cs" />
+     <Compile Include="Assets\UI\UI_Tooltip\Scripts\Icons.cs" />
      <Compile Include="Assets\UI\UI_Tooltip\Scripts\Item.cs" />
      <Compile Include="Assets\UI\UI_Tooltip\Scripts\ItemButton.cs" />
      <Compile Include="Assets\UI\UI_Tooltip\Scripts\TooltipPopup.cs" />
+     <Compile Include="Assets\UI\UI_Tooltip\Scripts\TopPanelFunction.cs" />
+     <Compile Include="Assets\UI\UI_Tooltip\Scripts\TypeColor.cs" />
      <None Include="Assets\UI\Shaders\spriteGradient.shader" />
      <None Include="Assets\UI\UI_Tooltip\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\UI\UI_Tooltip\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -124,6 +121,9 @@
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/Niels Henrik/Documents/GitHub/Enviroment-tycoon/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>C:/Users/Niels Henrik/Documents/GitHub/Enviroment-tycoon/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
  <HintPath>C:/Users/Niels Henrik/Documents/GitHub/Enviroment-tycoon/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
@@ -667,7 +667,6 @@
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

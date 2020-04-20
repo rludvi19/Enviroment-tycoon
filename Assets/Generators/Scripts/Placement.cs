@@ -27,50 +27,50 @@ public class Placement : MonoBehaviour
 
         if (placed && manager.Wealth >= properties.Price)
         {
-            if (Vector3.Distance(this.transform.position, center.transform.position) < 55f)
-            {
-                this.gameObject.tag = "metropolis";
-                manager.Wealth -= properties.Price;
-                manager.Upkeep += properties.Upkeep;
-                manager.Energy += properties.Energy + 10;
-                manager.PollutionPerRound += properties.PollutionPerRound;
-                manager.Happiness += properties.Happiness - 10;
-                placed = false;
-            }
-            else if (Vector3.Distance(this.transform.position, center.transform.position) < 95f)
-            {
-                this.gameObject.tag = "inland";
+            RaycastHit hit;
+            Vector3 direction = new Vector3(0,-1,0);
 
-                manager.Wealth -= properties.Price;
-                manager.Upkeep += properties.Upkeep;
-                manager.Energy += properties.Energy;
-                manager.PollutionPerRound += properties.PollutionPerRound;
-                manager.Happiness += properties.Happiness;
-                placed = false;
-            }
-            else if (Vector3.Distance(this.transform.position, center.transform.position) < 143f)
+            if (Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity))
             {
-                this.gameObject.tag = "coast";
-                manager.Wealth -= properties.Price + 10;
-                manager.Upkeep += properties.Upkeep;
-                manager.Energy += properties.Energy;
-                manager.PollutionPerRound += properties.PollutionPerRound;
-                manager.Happiness += properties.Happiness + 10;
-                placed = false;
-            }
-            else
-            {
-                placed = false;
-                Destroy(gameObject);
-            }
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back));
+                if (hit.transform.tag.Equals("metropolis"))
+                {
+                    this.gameObject.tag = "metropolis";
+                    manager.Wealth -= properties.Price;
+                    manager.Upkeep += properties.Upkeep;
+                    manager.Energy += properties.Energy + 10;
+                    manager.PollutionPerRound += properties.PollutionPerRound;
+                    manager.Happiness += properties.Happiness - 10;
+                    placed = false;
+                }
+                else if (hit.transform.tag.Equals("inland"))
+                {
+                    this.gameObject.tag = "inland";
 
-        }
-        else if(placed) {
-            Destroy(gameObject);
-            placed = false;
-            Instantiate(noMoney, UI.transform);
+                    manager.Wealth -= properties.Price;
+                    manager.Upkeep += properties.Upkeep;
+                    manager.Energy += properties.Energy;
+                    manager.PollutionPerRound += properties.PollutionPerRound;
+                    manager.Happiness += properties.Happiness;
+                    placed = false;
 
+                }
+                else if (hit.transform.tag.Equals("coast"))
+                {
+                    this.gameObject.tag = "coast";
+                    manager.Wealth -= properties.Price + 10;
+                    manager.Upkeep += properties.Upkeep;
+                    manager.Energy += properties.Energy;
+                    manager.PollutionPerRound += properties.PollutionPerRound;
+                    manager.Happiness += properties.Happiness + 10;
+                    placed = false;
+                }
+                else
+                {
+                    placed = false;
+                    Destroy(gameObject);
+                }
+            }
         }
     }
-
 }

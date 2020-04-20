@@ -6,16 +6,16 @@ namespace EnergiScript.TooltipUI
     [CreateAssetMenu(fileName = "New Consumable", menuName = "Items/Consumable")]
     public class Consumable : Item
     {
-        [SerializeField] private EnergyType energyType;
+        [SerializeField] private TypeColor typeColor;
         [SerializeField] private string useText = "Something";
 
-        public EnergyType EnergyType { get { return energyType; } }
+        public TypeColor EnergyType { get { return typeColor; } }
 
         public override string ColouredName
         {
             get
             {
-                string hexColour = ColorUtility.ToHtmlStringRGB(energyType.TextColour);
+                string hexColour = ColorUtility.ToHtmlStringRGB(typeColor.TextColour);
                 return $"<color=#{hexColour}>{Name}</color>";
             }
         }
@@ -24,8 +24,8 @@ namespace EnergiScript.TooltipUI
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.Append(EnergyType.Name).AppendLine();
-            builder.Append("<color=green>Description: ").Append("</color>").Append(useText).AppendLine();
+            builder.Append(typeColor.Name).AppendLine();
+            builder.Append("<color=green><size=25>Description: ").Append("</color>").Append(useText).AppendLine();
             builder.Append("Price: ").Append(Price).Append(" Gold");
 
             return builder.ToString();

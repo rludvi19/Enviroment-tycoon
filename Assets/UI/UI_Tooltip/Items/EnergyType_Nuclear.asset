@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Nuclear
   price: 2
-  energyType: {fileID: 11400000, guid: a217793ae133c71428e698a23f7897af, type: 2}
-  useText: 'Nuclear energy is a non renewable energy source that combines fusion energy.
-    Nuclear energy are labeled as Zero amission. '
+  typeColor: {fileID: 11400000, guid: a217793ae133c71428e698a23f7897af, type: 2}
+  useText: 'Nuclear energy is a non renewable energy source that combines fusion
+    energy. Nuclear energy are labeled as Zero amission. '

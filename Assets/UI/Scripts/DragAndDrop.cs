@@ -11,7 +11,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private GameObject newGenerator;
     private Placement generatorPlacement;
 
-    private float DragModifier = .6f;
+    private float DragModifier = 1f;
    // public GameObject Background;
 
     private void Awake()

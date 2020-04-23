@@ -275,16 +275,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<size=35><color=#9F9F9F>Coal</color></size>
+  m_text: '<size=35>Small Health Potion</size>
 
-    Non-renewable
+    Uncommon
 
-    <color=green><size=25>Description:
-    </color>Coal is a nonrenewable energy source that is currently the most widely
-    used energy supply method. The energy found in coal is stored from plants that
-    lived hundreds of millions years ago.
+    <color=green>Use:
+    Restores 5 health to the player</color>
 
-    Price: 1 Gold'
+    Requires Level 1
+
+    Sell Price:
+    10
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

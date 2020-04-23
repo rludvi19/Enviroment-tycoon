@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace UI.Tooltip.Scripts
+namespace EnergiScript.TooltipUI
 {
     [CreateAssetMenu]
-    public class TypeColor : ScriptableObject
+    public class icons : ScriptableObject
     {
         [SerializeField] private new string name;
         [SerializeField] private Color textColour;

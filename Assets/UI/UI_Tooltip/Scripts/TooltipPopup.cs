@@ -1,9 +1,11 @@
-﻿using System.Text;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Tooltip.Scripts
+namespace EnergiScript.TooltipUI
 {
     public class TooltipPopup : MonoBehaviour
     {
@@ -27,34 +29,25 @@ namespace UI.Tooltip.Scripts
 
         private void FollowCursor()
         {
-            if (!popupCanvasObject.activeSelf)
-            {
-                return;
-            }
+            if (!popupCanvasObject.activeSelf) { return; }
 
             Vector3 newPos = Input.mousePosition + offset;
             newPos.z = 0f;
-            float rightEdgeToScreenEdgeDistance =
-                Screen.width - (newPos.x + popupObject.rect.width * popupCanvas.scaleFactor / 2) - padding;
+            float rightEdgeToScreenEdgeDistance = Screen.width - (newPos.x + popupObject.rect.width * popupCanvas.scaleFactor / 2) - padding;
             if (rightEdgeToScreenEdgeDistance < 0)
             {
                 newPos.x += rightEdgeToScreenEdgeDistance;
             }
-
-            float leftEdgeToScreenEdgeDistance =
-                0 - (newPos.x - popupObject.rect.width * popupCanvas.scaleFactor / 2) + padding;
+            float leftEdgeToScreenEdgeDistance = 0 - (newPos.x - popupObject.rect.width * popupCanvas.scaleFactor / 2) + padding;
             if (leftEdgeToScreenEdgeDistance > 0)
             {
                 newPos.x += leftEdgeToScreenEdgeDistance;
             }
-
-            float topEdgeToScreenEdgeDistance =
-                Screen.height - (newPos.y + popupObject.rect.height * popupCanvas.scaleFactor) - padding;
+            float topEdgeToScreenEdgeDistance = Screen.height - (newPos.y + popupObject.rect.height * popupCanvas.scaleFactor) - padding;
             if (topEdgeToScreenEdgeDistance < 0)
             {
                 newPos.y += topEdgeToScreenEdgeDistance;
             }
-
             popupObject.transform.position = newPos;
         }
 

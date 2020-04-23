@@ -1,7 +1,10 @@
-﻿using System.Text;
+﻿using System.Runtime.Remoting.Messaging;
+using System.Text;
+using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace UI.Tooltip.Scripts
+namespace EnergiScript.TooltipUI
 
 
 {
@@ -15,6 +18,8 @@ namespace UI.Tooltip.Scripts
         [SerializeField] public Sprite displayImage;
 
         public Sprite DisplayImage {get {return displayImage;}}
+     
+
 
         public TypeColor EnergyType { get { return typeColor; } }
 
@@ -23,7 +28,7 @@ namespace UI.Tooltip.Scripts
             get
             {
                 string hexColour = ColorUtility.ToHtmlStringRGB(typeColor.TextColour);
-                return $"<color=#{hexColour}>{name}</color>";
+                return $"<color=#{hexColour}>{Name}</color>";
             }
         }
 

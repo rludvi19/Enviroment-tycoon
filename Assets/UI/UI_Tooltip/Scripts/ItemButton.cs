@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace UI.Tooltip.Scripts
+namespace EnergiScript.TooltipUI
 {
     public class ItemButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

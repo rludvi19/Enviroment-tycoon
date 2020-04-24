@@ -29,5 +29,12 @@ public class Researcher : MonoBehaviour
 
     public void Upgrade1Atom(GameObject generator) {
         generator.GetComponent<generatorBehavior>().Price = 100;
+        generatorBehavior[] placedbehaviour = GameObject.FindObjectsOfType<generatorBehavior>();
+        for (int i = 0; i < placedbehaviour.Length; i++) 
+        {
+            if (placedbehaviour[i].name == generator.name + "(Clone)") {
+                placedbehaviour[i].Price = 100;
+            }
+        }
     }
 }

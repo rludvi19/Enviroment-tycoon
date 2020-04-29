@@ -40,6 +40,16 @@ public class UIManager : MonoBehaviour
     public GameObject PopulationDisplay;
     public int population;
     private Text PopulationComponent;
+    
+    [Header("Current Event")]
+    public GameObject CurEventDisplay;
+    public string CurEvent;
+    private Text CurEventComponent;
+    
+    [Header("Turn Counter")]
+    public GameObject TurnCountDisplay;
+    public string TurnCount;
+    private Text TurnCountComponent;
 
     [Header("Balancing")]
     [Header("______________________________________________________________________________________________")]
@@ -59,17 +69,21 @@ public class UIManager : MonoBehaviour
         UpkeepComponent = UpkeepDisplay.GetComponent<Text>();
         EnergyComponent = EnergyDisplay.GetComponent<Text>();
         PopulationComponent = PopulationDisplay.GetComponent<Text>();
+        CurEventComponent = CurEventDisplay.GetComponent<Text>();
+        TurnCountComponent = TurnCountDisplay.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        HappinessComponent.text = Happiness*10 + " %";
-        PolutionComponent.text = Pollution + " ☁";
-        wealthComponent.text = Wealth + " $";
-        UpkeepComponent.text = Upkeep + "  $";
-        PopulationComponent.text = population + " 웃";
-        EnergyComponent.text = Energy + " ϟ";
-        PolutionPerRoundComponent.text = PollutionPerRound + " ☁";
+        HappinessComponent.text = Happiness*10 + "";
+        PolutionComponent.text = Pollution + "";
+        wealthComponent.text = Wealth + "";
+        UpkeepComponent.text = Upkeep + "";
+        PopulationComponent.text = population + "";
+        EnergyComponent.text = Energy + "";
+        PolutionPerRoundComponent.text = PollutionPerRound + "";
+        CurEventComponent.text = "Current Event: " + CurEvent;
+        TurnCountComponent.text = "END TURN:" + TurnCount;
     }
 }

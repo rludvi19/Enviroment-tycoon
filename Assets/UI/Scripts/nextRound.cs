@@ -43,6 +43,7 @@ namespace UI.Scripts
             selectedEvent = SelectEvent();
         
             EventPanel.GetComponent<EventDisplay>().DisplayEvent(selectedEvent, EventPanel);
+            EventPanel.GetComponent<EvenBehaviour>().dispatchEvent(selectedEvent);
         }
 
         private EventTemplate SelectEvent()

@@ -7,7 +7,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 {
     private RectTransform rectTransform;
     public GameObject Generator;
-    public GameObject position;
     private GameObject newGenerator;
     private Placement generatorPlacement;
 
@@ -42,7 +41,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         //Debug.Log("Click");
-            newGenerator = Instantiate(Generator, position.transform.position, rectTransform.rotation);
-            newGenerator.transform.rotation = Quaternion.identity;
+        newGenerator = Instantiate(Generator, this.transform.position, rectTransform.rotation);
+        newGenerator.SetActive(true);
+        newGenerator.transform.rotation = Quaternion.identity;
     }
 }

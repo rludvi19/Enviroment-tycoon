@@ -6,6 +6,7 @@ public class Placement : MonoBehaviour
 {
     //public GameObject uiManger;
     public bool placed = false;
+    public bool build = false;
     public GameObject center;
 
     private UIManager manager;
@@ -36,34 +37,27 @@ public class Placement : MonoBehaviour
                 if (hit.transform.tag.Equals("metropolis"))
                 {
                     this.gameObject.tag = "metropolis";
+                    properties.Energy += 10;
                     manager.Wealth -= properties.Price;
-                    manager.Upkeep += properties.Upkeep;
-                    manager.Energy += properties.Energy + 10;
-                    manager.PollutionPerRound += properties.PollutionPerRound;
-                    manager.Happiness += properties.Happiness - 10;
+                    properties.Happiness -= 10;
                     placed = false;
+                    build = true;
                 }
                 else if (hit.transform.tag.Equals("inland"))
                 {
                     this.gameObject.tag = "inland";
-
                     manager.Wealth -= properties.Price;
-                    manager.Upkeep += properties.Upkeep;
-                    manager.Energy += properties.Energy;
-                    manager.PollutionPerRound += properties.PollutionPerRound;
-                    manager.Happiness += properties.Happiness;
                     placed = false;
+                    build = true;
 
                 }
                 else if (hit.transform.tag.Equals("coast"))
                 {
                     this.gameObject.tag = "coast";
                     manager.Wealth -= properties.Price + 10;
-                    manager.Upkeep += properties.Upkeep;
-                    manager.Energy += properties.Energy;
-                    manager.PollutionPerRound += properties.PollutionPerRound;
-                    manager.Happiness += properties.Happiness + 10;
+                    properties.Happiness += 10;
                     placed = false;
+                    build = true;
                 }
                 else
                 {

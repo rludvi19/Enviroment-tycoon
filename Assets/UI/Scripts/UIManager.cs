@@ -64,6 +64,20 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        generatorBehavior[] generators = FindObjectsOfType<generatorBehavior>();
+
+        foreach ( generatorBehavior generator in generators) 
+        {
+            if (generator.isActiveAndEnabled && generator.GetComponent<Placement>().build) {
+                Happiness += generator.Happiness;
+                Upkeep += generator.Upkeep;
+                Energy += generator.Energy;
+                PollutionPerRound += generator.PollutionPerRound;
+            }
+        }
+
+
+
         HappinessComponent.text = Happiness*10 + " %";
         PolutionComponent.text = Pollution + " ☁";
         wealthComponent.text = Wealth + " $";
@@ -71,5 +85,10 @@ public class UIManager : MonoBehaviour
         PopulationComponent.text = population + " 웃";
         EnergyComponent.text = Energy + " ϟ";
         PolutionPerRoundComponent.text = PollutionPerRound + " ☁";
+
+        Happiness = 0;
+        Upkeep = 0;
+        Energy = 0;
+        PollutionPerRound = 0;
     }
 }

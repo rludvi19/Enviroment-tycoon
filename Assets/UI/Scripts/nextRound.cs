@@ -40,10 +40,14 @@ namespace UI.Scripts
             Stats.population += Stats.PopulationIncreasePerRound;
             Stats.Pollution += Stats.PollutionPerRound;
 
+            if (selectedEvent != null)
+            {
+                EventPanel.GetComponent<EvenBehaviour>().dispatchEvent(selectedEvent);
+            }
+
             selectedEvent = SelectEvent();
-        
+            
             EventPanel.GetComponent<EventDisplay>().DisplayEvent(selectedEvent, EventPanel);
-            EventPanel.GetComponent<EvenBehaviour>().dispatchEvent(selectedEvent);
         }
 
         private EventTemplate SelectEvent()

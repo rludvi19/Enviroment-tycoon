@@ -4,7 +4,7 @@ namespace Events.Scripts
 {
    public class EvenBehaviour : MonoBehaviour
    {
-      public GameObject manager; 
+      public UIManager manager; 
       public void dispatchEvent(ScriptableObject @event)
       {
          switch (@event.name)
@@ -20,11 +20,21 @@ namespace Events.Scripts
                      coalGeneratorCount++;
                   }
                }
-               
+
+               manager.Energy += 4 * coalGeneratorCount;
 
                break;
             
             case "Earthquake":
+               var objectsInMetro = GameObject.FindGameObjectsWithTag("metropolis");
+
+               foreach (var possibleGenerator in objectsInMetro)
+               {
+                  if (possibleGenerator.GetComponent<generatorBehavior>())
+                  {
+                     Destroy(possibleGenerator);
+                  }
+               }
                break;
          
             case "Eureka!":

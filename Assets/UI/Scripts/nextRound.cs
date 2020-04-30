@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Events.Scripts;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace UI.Scripts
 {
@@ -17,9 +19,11 @@ namespace UI.Scripts
         {
             Stats = Manager.gameObject.GetComponent<UIManager>();
         }
-    
+
         public void Next()
         {
+            resetAllGenerators();
+            
             Stats.Wealth += Stats.IncomePerCitizen;
             Stats.Wealth -= Stats.Upkeep;
             if (Stats.Energy > Stats.population * Stats.EnergyNeededPerCitizen)
@@ -46,8 +50,35 @@ namespace UI.Scripts
             }
 
             selectedEvent = SelectEvent();
-            
+
             EventPanel.GetComponent<EventDisplay>().DisplayEvent(selectedEvent, EventPanel);
+        }
+
+        private void resetAllGenerators()
+        {
+            generatorBehavior coalTemplate = GameObject.Find("Coal").GetComponent<generatorBehavior>();
+            generatorBehavior windTemplate = GameObject.Find("Wind").GetComponent<generatorBehavior>();
+            generatorBehavior nuclearTemplate = GameObject.Find("Atom").GetComponent<generatorBehavior>();
+
+            var allGeneratorBehaviors = FindObjectsOfType<generatorBehavior>();
+
+            foreach (var generator in allGeneratorBehaviors)
+            {
+                if (generator.name.Equals("Coal(Clone)"))
+                {
+                    generator.Energy = coalTemplate.Energy;
+                }
+                
+                if (generator.name.Equals("Wind(Clone)"))
+                {
+                    generator.Energy = windTemplate.Energy;
+                }
+
+                if (generator.name.Equals("Atom(Clone)"))
+                {
+                    generator.Energy = nuclearTemplate.Energy;
+                }
+            }
         }
 
         private EventTemplate SelectEvent()

@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Events\Scripts\CurrentEvent.cs" />
      <Compile Include="Assets\Events\Scripts\EvenBehaviour.cs" />
      <Compile Include="Assets\Events\Scripts\EventDisplay.cs" />
      <Compile Include="Assets\Events\Scripts\EventTemplate.cs" />

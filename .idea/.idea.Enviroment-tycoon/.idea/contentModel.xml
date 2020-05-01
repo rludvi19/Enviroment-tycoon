@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Events" t="Include">
           <e p="Scripts" t="Include">
+            <e p="CurrentEvent.cs" t="Include" />
             <e p="EvenBehaviour.cs" t="Include" />
             <e p="EventDisplay.cs" t="Include" />
             <e p="EventTemplate.cs" t="Include" />

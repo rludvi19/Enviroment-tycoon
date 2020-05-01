@@ -10,10 +10,18 @@ namespace UI.Scripts
     {
         public GameObject EventPanel;
         public GameObject Manager;
+        
+        public generatorBehavior coalTemplate;
+        public generatorBehavior windTemplate;
+        public generatorBehavior atomTemplate;
+
+        public int currentTurn = 1;
+        
         private UIManager Stats;
 
         public List<EventTemplate> events;
         private EventTemplate selectedEvent;
+        
 
         public void Start()
         {
@@ -22,6 +30,7 @@ namespace UI.Scripts
 
         public void Next()
         {
+            currentTurn++; 
             resetAllGenerators();
             
             Stats.Wealth += Stats.IncomePerCitizen;
@@ -43,23 +52,19 @@ namespace UI.Scripts
 
             Stats.population += Stats.PopulationIncreasePerRound;
             Stats.Pollution += Stats.PollutionPerRound;
+            
+            selectedEvent = SelectEvent();
 
+            EventPanel.GetComponent<EventDisplay>().DisplayEvent(selectedEvent, EventPanel); 
+            
             if (selectedEvent != null)
             {
                 EventPanel.GetComponent<EvenBehaviour>().dispatchEvent(selectedEvent);
             }
-
-            selectedEvent = SelectEvent();
-
-            EventPanel.GetComponent<EventDisplay>().DisplayEvent(selectedEvent, EventPanel);
         }
 
         private void resetAllGenerators()
         {
-            generatorBehavior coalTemplate = GameObject.Find("Coal").GetComponent<generatorBehavior>();
-            generatorBehavior windTemplate = GameObject.Find("Wind").GetComponent<generatorBehavior>();
-            generatorBehavior nuclearTemplate = GameObject.Find("Atom").GetComponent<generatorBehavior>();
-
             var allGeneratorBehaviors = FindObjectsOfType<generatorBehavior>();
 
             foreach (var generator in allGeneratorBehaviors)
@@ -76,7 +81,7 @@ namespace UI.Scripts
 
                 if (generator.name.Equals("Atom(Clone)"))
                 {
-                    generator.Energy = nuclearTemplate.Energy;
+                    generator.Energy = atomTemplate.Energy;
                 }
             }
         }

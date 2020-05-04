@@ -13,7 +13,7 @@ namespace Events.Scripts
 
         private void Awake()
         {
-            nextRoundHandler = GameObject.Find("EventSystem").GetComponent<NextRound>();
+            nextRoundHandler = GameObject.Find("EventSystem").GetComponent<NextRound>(); 
         }
 
 

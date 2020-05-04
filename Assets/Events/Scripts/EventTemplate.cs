@@ -10,6 +10,6 @@ namespace Events.Scripts
         [TextArea(10,20)]
         public string description;
 
-        public Sprite artwork; 
+        public Sprite artwork;
     }
 }

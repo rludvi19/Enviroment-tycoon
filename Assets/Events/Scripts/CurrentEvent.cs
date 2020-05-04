@@ -29,7 +29,7 @@ namespace Events.Scripts
 
         private void EurekaEvent()
         {
-            
+
         }
 
         private void NuclearDisasterOverseasEvent()
@@ -41,7 +41,5 @@ namespace Events.Scripts
         {
             
         }
-
-
     }
 }

@@ -20,6 +20,8 @@ public class Placement : MonoBehaviour
         properties = GetComponent<generatorBehavior>();
         manager = FindObjectOfType<UIManager>();
         UI = GameObject.Find("UI");
+
+        AddGeneratorToList(this.properties);
     }
 
     // Update is called once per frame
@@ -66,5 +68,58 @@ public class Placement : MonoBehaviour
                 }
             }
         }
+    }
+
+     private void OnDestroy() 
+     {
+         RemoveGeneratorFromList(this.properties);
+     }
+
+    private void AddGeneratorToList(generatorBehavior generator)
+    {
+        switch (generator.name)
+        {
+            case "Coal(Clone)" :
+
+                manager.coalGeneratorList.Add(generator);
+
+            break;
+
+            case "Wind(Clone)" :
+
+                manager.windGeneratorList.Add(generator);
+
+            break;
+
+            case "Atom(Clone)" :
+
+                manager.atomGeneratorList.Add(generator);
+
+            break;    
+        }
+    }
+
+    private void RemoveGeneratorFromList(generatorBehavior generator)
+    {
+        switch (generator.name)
+         {
+            case "Coal(Clone)" :
+
+                manager.coalGeneratorList.Remove(generator);
+
+            break;
+
+            case "Wind(Clone)" :
+
+                manager.windGeneratorList.Remove(generator);
+
+            break;
+
+            case "Atom(Clone)" :
+
+                manager.atomGeneratorList.Remove(generator);
+
+            break;    
+         }
     }
 }

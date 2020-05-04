@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Events.Scripts
 {
-    public class EvenBehaviour : MonoBehaviour
+    public class EventBehaviour : MonoBehaviour
     {
         public UIManager manager;
         private NextRound nextRoundHandler;

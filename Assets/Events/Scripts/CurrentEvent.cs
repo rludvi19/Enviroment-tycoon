@@ -15,7 +15,16 @@ namespace Events.Scripts
 
         private void CoalMineOpenedEven()
         {
-            
+            generatorBehavior[] generators = FindObjectsOfType<generatorBehavior>();
+            List<generatorBehavior> coalGenerators = new List<generatorBehavior>();
+
+            foreach (generatorBehavior generator in generators)
+            {
+                if (generator.name.Equals("Coal(Clone)"))
+                {
+                    coalGenerators.Add(generator);
+                }                
+            }
         }
 
         private void EarthquakeEvent()

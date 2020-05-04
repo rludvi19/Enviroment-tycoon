@@ -59,7 +59,7 @@ namespace UI.Scripts
             
             if (selectedEvent != null)
             {
-                EventPanel.GetComponent<EvenBehaviour>().dispatchEvent(selectedEvent);
+                EventPanel.GetComponent<EventBehaviour>().dispatchEvent(selectedEvent);
             }
         }
 

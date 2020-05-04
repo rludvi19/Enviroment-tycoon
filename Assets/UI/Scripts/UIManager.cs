@@ -48,6 +48,12 @@ public class UIManager : MonoBehaviour
     public int EnergyNeededPerCitizen = 1;
     public int PrizeForExessEnergy = 1;
 
+    [HideInInspector]
+    public List<generatorBehavior> coalGeneratorList; 
+    public List<generatorBehavior> windGeneratorList; 
+    public List<generatorBehavior> atomGeneratorList; 
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +65,10 @@ public class UIManager : MonoBehaviour
         UpkeepComponent = UpkeepDisplay.GetComponent<Text>();
         EnergyComponent = EnergyDisplay.GetComponent<Text>();
         PopulationComponent = PopulationDisplay.GetComponent<Text>();
+
+        coalGeneratorList = new List<generatorBehavior>();
+        windGeneratorList = new List<generatorBehavior>();
+        atomGeneratorList = new List<generatorBehavior>();
     }
 
     // Update is called once per frame
@@ -76,6 +86,7 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        Debug.Log(coalGeneratorList.Count);
 
 
         HappinessComponent.text = Happiness*10 + " %";
@@ -90,5 +101,7 @@ public class UIManager : MonoBehaviour
         Upkeep = 0;
         Energy = 0;
         PollutionPerRound = 0;
+
+
     }
 }

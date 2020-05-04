@@ -20,7 +20,9 @@ namespace UI.Scripts
         private UIManager Stats;
 
         public List<EventTemplate> events;
-        private EventTemplate selectedEvent;
+        
+        [HideInInspector]
+        public EventTemplate selectedEvent;
         
 
         public void Start()

@@ -1689,6 +1689,9 @@ MonoBehaviour:
   IncomePerCitizen: 1
   EnergyNeededPerCitizen: 1
   PrizeForExessEnergy: 1
+  coalGeneratorList: []
+  windGeneratorList: []
+  atomGeneratorList: []
 --- !u!4 &430407971
 Transform:
   m_ObjectHideFlags: 0
@@ -3511,7 +3514,7 @@ PrefabInstance:
     - target: {fileID: 2471403537084055739, guid: 599fc18ab47d2de4f944bc0b111cfb77,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 220
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2471403537084055739, guid: 599fc18ab47d2de4f944bc0b111cfb77,
         type: 3}
@@ -7097,6 +7100,7 @@ MonoBehaviour:
   events:
   - {fileID: 11400000, guid: 5db698ca1808f394497478c22939999d, type: 2}
   - {fileID: 11400000, guid: d9482067f41283947ba3a24442ff9082, type: 2}
+  selectedEvent: {fileID: 0}
 --- !u!1 &1640561238
 GameObject:
   m_ObjectHideFlags: 0

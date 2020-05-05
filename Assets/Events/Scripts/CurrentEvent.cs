@@ -6,25 +6,46 @@ using UnityEngine;
 namespace Events.Scripts
 {
     public class CurrentEvent : MonoBehaviour
-    {   
-        private UIManager gameManager; 
+    {
+        private UIManager gameManager;
+        private int lifeTime;
+        private int eventDuration;
 
-        private void Awake() 
+        public float energyMod = 1; 
+        public float happinessMod = 1; 
+        public float pollutionMod = 1;
+
+        public delegate void ActiveEvent();
+
+        private void Awake()
         {
             gameManager = FindObjectOfType<UIManager>();
+            lifeTime = 0;
         }
 
-        private void CoalMineOpenedEven()
+        public void UpdateStatus() //Is called on Next Round 
         {
+            lifeTime++;
+
+            if (lifeTime >= eventDuration)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public void CoalMineOpenedEvent()
+        {
+            eventDuration = 3;
+
             foreach (generatorBehavior generator in gameManager.coalGeneratorList)
             {
-                generator.Energy = Mathf.RoundToInt((float) generator.Energy * 1.2f);
+                generator.Energy = Mathf.RoundToInt((float)generator.Energy * 1.2f);
             }
         }
 
         private void EarthquakeEvent()
         {
-            
+
         }
 
         private void EurekaEvent()
@@ -34,12 +55,12 @@ namespace Events.Scripts
 
         private void NuclearDisasterOverseasEvent()
         {
-            
+
         }
 
         private void PoliticalScandalEvent()
         {
-            
+
         }
     }
 }

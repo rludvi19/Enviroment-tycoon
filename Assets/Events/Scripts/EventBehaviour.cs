@@ -8,8 +8,11 @@ namespace Events.Scripts
 {
     public class EventBehaviour : MonoBehaviour
     {
+        [HideInInspector]
         public UIManager manager;
+        public GameObject currentEventPrefab;
         private NextRound nextRoundHandler;
+        
 
         private void Awake()
         {
@@ -22,6 +25,11 @@ namespace Events.Scripts
             switch (@event.name)
             {
                 case "Coal Mine Opened":
+                    
+                    GameObject eventHandler = Instantiate(currentEventPrefab);
+                    eventHandler.SetActive(true);
+                    eventHandler.GetComponent<CurrentEvent>().CoalMineOpenedEvent();
+
                     break;
 
                 case "Earthquake":

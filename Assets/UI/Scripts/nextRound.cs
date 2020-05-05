@@ -33,7 +33,7 @@ namespace UI.Scripts
         public void Next()
         {
             currentTurn++; 
-            resetAllGenerators();
+            //resetAllGenerators();
             
             Stats.Wealth += Stats.IncomePerCitizen;
             Stats.Wealth -= Stats.Upkeep;
@@ -61,7 +61,14 @@ namespace UI.Scripts
             
             if (selectedEvent != null)
             {
-                EventPanel.GetComponent<EventBehaviour>().dispatchEvent(selectedEvent);
+                this.GetComponent<EventBehaviour>().dispatchEvent(selectedEvent);
+            }
+
+            var allEvents = FindObjectsOfType<CurrentEvent>(); 
+
+            foreach (CurrentEvent cEvent in allEvents)
+            {
+                cEvent.UpdateStatus();
             }
         }
 

@@ -37,10 +37,7 @@ namespace Events.Scripts
         {
             eventDuration = 3;
 
-            foreach (generatorBehavior generator in gameManager.coalGeneratorList)
-            {
-                generator.Energy = Mathf.RoundToInt((float)generator.Energy * 1.2f);
-            }
+            energyMod += 0.2f; 
         }
 
         private void EarthquakeEvent()

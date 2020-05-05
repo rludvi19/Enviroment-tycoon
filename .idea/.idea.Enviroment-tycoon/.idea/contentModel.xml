@@ -19,6 +19,11 @@
           </e>
         </e>
         <e p="UI" t="Include">
+          <e p="Camera" t="Include">
+            <e p="CameraControl.cs" t="Include" />
+            <e p="CameraReset.cs" t="Include" />
+            <e p="CameraRotate.cs" t="Include" />
+          </e>
           <e p="Research" t="Include">
             <e p="Researcher.cs" t="Include" />
           </e>
